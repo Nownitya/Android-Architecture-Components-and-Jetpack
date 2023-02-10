@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quote"
+            type="com.smartgig.databindingexample1.Quote" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="0dp"
+        tools:context=".MainActivity"
+
+        >
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="QUOTIFY"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/square_box"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_tv">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                app:srcCompat="@drawable/quotes_1" />
+
+            <TextView
+                android:id="@+id/quotesTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:paddingStart="10dp"
+                android:text="@{quote.text}"
+                android:textColor="@color/text_color_1"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/author_nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:paddingStart="10dp"
+                android:text="@{quote.author}"
+                android:textColor="@color/text_color_1"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/onPrevious_BT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/arrow_left_24"
+                android:fontFamily="@font/montserrat_semibold"
+                android:onClick="onPrevious"
+                android:padding="20dp"
+                android:text="Previous"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text_color_2"
+                android:textSize="24sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/onNext_BT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableEnd="@drawable/arrow_right_24"
+                android:fontFamily="@font/montserrat_semibold"
+                android:onClick="onNext"
+                android:padding="20dp"
+                android:text="Next"
+                android:textAlignment="textEnd"
+                android:textColor="@color/text_color_2"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="#454545"
+            android:clickable="true"
+            android:contentDescription="Floating Action Button"
+            android:elevation="15dp"
+            android:onClick="onShare"
+            app:layout_constraintBottom_toBottomOf="@id/linearLayout"
+            app:layout_constraintEnd_toEndOf="@id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout"
+            app:srcCompat="@drawable/share_24"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

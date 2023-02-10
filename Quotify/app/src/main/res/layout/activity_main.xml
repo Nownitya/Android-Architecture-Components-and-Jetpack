@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="0dp"
+    tools:context=".MainActivity"
+
+    >
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="QUOTIFY"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/square_box"
+        android:elevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tv"
+        >
+
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:padding="10dp"
+            app:srcCompat="@drawable/quotes_1" />
+
+        <TextView
+            android:id="@+id/quotesTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="This id the Quotes app which is used to show random Qotes"
+            android:paddingStart="10dp"
+            android:textSize="24sp"
+            android:textColor="@color/text_color_1"
+            android:textStyle="bold|italic"
+            />
+        <TextView
+            android:id="@+id/author_nameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Author Name"
+            android:paddingStart="10dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:layout_marginVertical="30dp"
+            android:textSize="18sp"
+            android:textColor="@color/text_color_1"
+            android:textStyle="bold|italic"
+            />
+
+        
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/onPrevious_BT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/arrow_left_24"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="20dp"
+            android:visibility="invisible"
+            android:textColor="@color/text_color_2"
+            android:text="Previous"
+            android:onClick="onPrevious"
+            android:textAlignment="viewStart"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/onNext_BT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/arrow_right_24"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="20dp"
+            android:text="Next"
+            android:onClick="onNext"
+            android:textColor="@color/text_color_2"
+            android:textAlignment="textEnd"
+            android:textSize="24sp" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="Floating Action Button"
+        app:srcCompat="@drawable/share_24"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#454545"
+        android:onClick="onShare"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
