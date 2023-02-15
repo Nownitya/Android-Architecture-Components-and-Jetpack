@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,19 +26,19 @@ class MainActivity : AppCompatActivity() {
 //        ).build()
 
         GlobalScope.launch {
-            database.contactDAO().insertContact(Contact(0, "Rohan", "9494949494"))
+            database.contactDAO().insertContact(Contact(0, "Rohan", "9494949494",Date(),1))
         }
 
     }
 
     fun getData(view: View) {
-//        database.contactDAO().getContact().observe(this, Observer {
-//            Log.d("CheckData",it.toString())
-//        })
+        database.contactDAO().getContact().observe(this, Observer {
+            Log.d("CheckData",it.toString())
+        })
 
-        database.contactDAO().getContact().observe(this) {
-            Log.d("CheckData", it.toString())
-        }
+//        database.contactDAO().getContact().observe(this) {
+//            Log.d("CheckData", it.toString())
+//        }
 
     }
 }
